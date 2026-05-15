@@ -33,7 +33,7 @@ it takes normal text and converts it into ASCII art through a Python program and
    
 
 ## AI Declaration
-Used VS Code autocomplete for mapping (it's too tedious to do by hand). no other AI-written code is used.
+Used VS Code autocomplete for mapping (it's too tedious to do by hand). No other AI-written code is used. took help from ChatGPT to deploy in PythonAnywhere
 
 ```
         __ __   ____  _____ __    __   ____  ____   ______  __ __     
