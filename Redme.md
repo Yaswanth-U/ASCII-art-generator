@@ -23,12 +23,17 @@ ________/\\\\\\\\\__/\\\\\\___________________/\\\________
 
 ``` 
 ## What does app this do?
-it takes normal text and converts it into ASCII art through a python program and easy to use UI.
+it takes normal text and converts it into ASCII art through a Python program and an easy-to-use UI.
 ## How to use the app.
-1. install python.
-2. install flask library.
+1. Install Python.
+2. Install Flask library.
 3. copy paste or run the code in base.py
 4. input your text and get your art
+ ### Or go to https://yaswanth9440.pythonanywhere.com/
+   
+
+## AI Declaration
+Used VS Code autocomplete for mapping (it's too tedious to do by hand). no other AI-written code is used.
 
 ```
         __ __   ____  _____ __    __   ____  ____   ______  __ __     
