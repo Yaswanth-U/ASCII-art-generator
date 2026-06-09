@@ -30,7 +30,16 @@ It takes normal text and converts it into ASCII art through a Python program and
 3. Copy, paste or run the code in base.py
 4. Input your text and get your art
  ### Or go to https://yaswanth9440.pythonanywhere.com/
-   
+
+  ## Demo
+
+https://github.com/user-attachments/assets/702eb9f4-f892-4ad7-a8c0-e22f66984ae9
+
+
+
+
+  
+  
 
 ## AI Declaration
 Used VS Code autocomplete for mapping (it's too tedious to do by hand). No other AI-written code is used. Took help from ChatGPT to deploy in PythonAnywhere
