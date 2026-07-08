@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/702eb9f4-f892-4ad7-a8c0-e22f66984ae9
 
 
 ### Tech stack used
-python(Flask, for processing and generating line by line), HTML(Structure and ), CSS(for styling)
+python(for processing and generating line by line), HTML(Structure), CSS(for styling)
   
   
 
