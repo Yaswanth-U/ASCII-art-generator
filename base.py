@@ -202,15 +202,20 @@ ASCII_MAP= {
 
 
 def generate_ascii(text):
-    rows = ["", "", "", "", "", ""]
+    blocks = []
 
-    for char in text.upper():
-        pattern = ASCII_MAP.get(char, ASCII_MAP['?'])
+    for line in text.splitlines():
+        rows = ["", "", "", "", "", ""]
 
-        for i in range(6):
-            rows[i] += pattern[i] + "  "
+        for char in line.upper():
+            pattern = ASCII_MAP.get(char, ASCII_MAP['?'])
 
-    return "\n".join(rows)
+            for i in range(6):
+                rows[i] += pattern[i] + "  "
+
+        blocks.append("\n".join(rows))
+
+    return "\n\n".join(blocks)
 
 
 HTML_TEMPLATE = """
@@ -263,14 +268,15 @@ HTML_TEMPLATE = """
 
         textarea {
             width: 100%;
-            height: 140px;
+            min-height: 140px;
             background: #000;
             color: #00ff88;
             border: 1px solid #00ff88;
             border-radius: 18px;
             padding: 18px;
             font-size: 18px;
-            resize: none;
+            line-height: 1.5;
+            resize: vertical;
             outline: none;
             margin-bottom: 20px;
         }
@@ -311,11 +317,11 @@ HTML_TEMPLATE = """
             border-radius: 18px;
             padding: 24px;
             min-height: 260px;
-            overflow-x: auto;
+            overflow: auto;
         }
 
         pre {
-            white-space: pre-wrap;
+            white-space: pre;
             line-height: 1.5;
             font-size: 14px;
         }
@@ -340,7 +346,7 @@ HTML_TEMPLATE = """
                     Generate!
                 </button>
 
-                <button class="copy-btn" type="button" onclick="copyOutput()">
+                <button class="copy-btn" id="copy-button" type="button" onclick="copyOutput()">
                     Copy Output
                 </button>
             </div>
@@ -352,10 +358,36 @@ HTML_TEMPLATE = """
     </div>
 
     <script>
-        function copyOutput() {
-            const text = document.getElementById('ascii-output').innerText;
-            navigator.clipboard.writeText(text)
-                .then(() => alert('ASCII art copied!'));
+        async function copyOutput() {
+            const text = document.getElementById('ascii-output').textContent;
+            const button = document.getElementById('copy-button');
+
+            try {
+                if (!navigator.clipboard || !window.isSecureContext) {
+                    throw new Error('Clipboard API unavailable');
+                }
+                await navigator.clipboard.writeText(text);
+            } catch (error) {
+                const copyField = document.createElement('textarea');
+                copyField.value = text;
+                copyField.setAttribute('readonly', '');
+                copyField.style.position = 'fixed';
+                copyField.style.opacity = '0';
+                document.body.appendChild(copyField);
+                copyField.select();
+                const copied = document.execCommand('copy');
+                copyField.remove();
+
+                if (!copied) {
+                    button.textContent = 'Copy failed';
+                    return;
+                }
+            }
+
+            button.textContent = 'Copied!';
+            window.setTimeout(() => {
+                button.textContent = 'Copy Output';
+            }, 2000);
         }
     </script>
 </body>
