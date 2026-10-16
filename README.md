@@ -24,6 +24,7 @@ ________/\\\\\\\\\__/\\\\\\___________________/\\\________
 ``` 
 ## What does this app do?
 It takes normal text and converts it into ASCII art through a Python program and an easy-to-use UI.
+![https://cdn.hackclub.com/01a14638-7d00-7c8e-b125-4e4a26b8fcf9/Screenshot%202026-10-17%20010623.png]
 ## How to use the app.
 1. Install Python.
 2. Install the Flask library.
