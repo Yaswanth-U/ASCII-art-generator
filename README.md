@@ -44,7 +44,7 @@ python(for processing and generating line by line), HTML(Structure), CSS(for sty
   
 
 ## AI Declaration
-Used VS Code autocomplete for mapping (it's too tedious to do by hand). No other AI-written code is used. Took help from ChatGPT to deploy in PythonAnywhere
+Used VS Code autocomplete for mapping (it's too tedious to do by hand). Took help from ChatGPT to deploy in PythonAnywhere.
 
 ```
         __ __   ____  _____ __    __   ____  ____   ______  __ __     
